@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <style>
+  body {
+    margin-left: 1%;
+  }
+  .article-input {
+    margin-top: 2%;
+  }
+
+  .results {
+    margin-top: 5%;
+  }
+  </style>
+</head>
+<body>
+  <h1>tvrain news recommender</h1>
+  <fieldset class="articles-form" style="width: 40%;">
+    <input type="text" class="form-control article-input" id="article1" placeholder="First article URL">
+    <input type="text" class="form-control article-input" id="article2" placeholder="Second article URL">
+    <input type="text" class="form-control article-input" id="article3" placeholder="Third article URL">
+    <a id="submit" class="btn btn-primary article-input">Submit</a>
+  </fieldset>
+  <div class='results'></div>
+  <!-- jQuery first, then Bootstrap JS. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  <script>
+
+  $(document).ready(function() {
+    $("#submit").click(function() {
+      $.post('/recommendations', {'url1': $('#article1').val(),
+      'url2': $('#article2').val(),
+      'url3': $('#article3').val()}, 
+      function (data) {
+        var articles = JSON.parse(data);
+        $('.results').html('<ol>');
+        for (var i = 0; i < articles.length; i++) {
+          console.log(i);
+          $('.results').append('<li><a href="' + articles[i].url +
+          '">'+ articles[i].title + '</a></li>');
+        }
+        $('.results').append('</ol>')
+      });
+      /*$("form input[type=submit]").click(function() {
+      $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
+      $(this).attr("clicked", "true");
+    });*/
+  });
+});
+</script>
+</body>
+</html>
