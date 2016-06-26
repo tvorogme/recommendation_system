@@ -12,7 +12,7 @@ class TvrainData:
         :param data: Pandas Frame with data.
         Just load data from Mongo.
         '''
-        self.data = pd.DataFrame.from_dict(list(MongoClient(os.environ['MONGODB_URL']).tvran.tvrain.find()))
+        self.data = pd.DataFrame.from_dict(list(MongoClient(os.environ['MONGODB_URL']).tvrain.tvrain.find()))
         # This shit is about mongo can't save id -> str.
         self.data._id = list(map(lambda _id: str(_id), self.data._id.values))
 
