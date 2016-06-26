@@ -18,15 +18,15 @@ class TvrainData:
         # This shit is about mongo can't save id -> str.
         self.dataframe._id = list(map(lambda _id: str(_id), self.dataframe._id.values))
 
-    def get_random_by_tume(self, n):
+    def get_random_articles(self, n):
         '''Returns N of topics for index.html'''
-        sorted_time = sorted(self.datafram.time.values)
+        sorted_time = sorted(self.dataframe.time.values)
         # We need indexes for slice in time
         index = sorted_time.index(random.choice(sorted_time))
-        times = sorted(self.dataframe.time.values)[index:index+n]
+        times = sorted_time[index:index+n]
 
-        out_values = []
+        articles = []
         for val in self.dataframe[self.dataframe.time.isin(times)].values:
-            out_values.append({'value': val[0], 'desc': val[3]})
+            articles.append({'_id': val[0], 'title': val[3]})
 
-        return out_values
+        return articles
