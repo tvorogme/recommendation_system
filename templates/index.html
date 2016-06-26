@@ -18,16 +18,32 @@
   .results {
     margin-top: 5%;
   }
+  
+  h1{
+    width: 100%;
+    text-align: center;
+  }
+  
+  p{
+    cursor-style: pointer;
+  }
+  
+  input[type="checkbox"]{
+    width: 10px;
+    height: 20px; 
+  }
   </style>
 </head>
-<body>
-  <h1>tvrain news recommender</h1>
-  <fieldset class="articles-form" style="width: 40%;">
-    <input type="text" class="form-control article-input" id="article1" placeholder="First article URL">
-    <input type="text" class="form-control article-input" id="article2" placeholder="Second article URL">
-    <input type="text" class="form-control article-input" id="article3" placeholder="Third article URL">
-    <a id="submit" class="btn btn-primary article-input">Submit</a>
-  </fieldset>
+<:body>
+  <h1>News recommender.</h1>
+  <form>
+    {% for part in parts %}
+    <div>
+      <input type="checkbox" value="{{ part['value'] }}", name="{{ part['name'] }}">
+      <p> {{ part['desc'] }} </p>
+    </div>
+    {% endfor %}
+  </form>
   <div class='results'></div>
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
