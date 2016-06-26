@@ -39,8 +39,8 @@
   <form>
     {% for part in parts %}
     <div>
-      <input type="checkbox" value="{{ part['value'] }}", name="{{ part['name'] }}">
-      <p> {{ part['desc'] }} </p>
+      <input type="checkbox" value="{{ part['_id'] }}", name="{{ part['_id'] }}">
+      <p> {{ part['title'] }} </p>
     </div>
     {% endfor %}
   </form>
