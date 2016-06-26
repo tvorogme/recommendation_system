@@ -12,19 +12,21 @@ class TvrainData:
         :param data: Pandas Frame with data.
         Just load data from Mongo.
         '''
-        self.data = pd.DataFrame.from_dict(list(MongoClient(os.environ['MONGODB_URL']).tvran.tvrain.find()))
+        mongodb_items = list(MongoClient(os.environ['MONGODB_URL']).tvrain.tvrain.find())
+        self.dataframe = pd.DataFrame.from_dict(mongodb_items)
+        
         # This shit is about mongo can't save id -> str.
-        self.data._id = list(map(lambda _id: str(_id), self.data._id.values))
+        self.dataframe._id = list(map(lambda _id: str(_id), self.dataframe._id.values))
 
-    def get_random_by_tume(self, n):
+    def get_random_articles(self, n):
         '''Returns N of topics for index.html'''
-        sorted_time = sorted(self.data.time.values)
+        sorted_time = sorted(self.dataframe.time.values)
         # We need indexes for slice in time
         index = sorted_time.index(random.choice(sorted_time))
-        times = sorted(self.data.time.values)[index:index+n]
+        times = sorted_time[index:index+n]
 
-        out_values = []
-        for val in self.data[self.data.time.isin(times)].values:
-            out_values.append({'value': val[0], 'desc': val[3]})
+        articles = []
+        for val in self.dataframe[self.dataframe.time.isin(times)].values:
+            articles.append({'_id': val[0], 'title': val[3]})
 
-        return out_values
+        return articles
