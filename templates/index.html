@@ -23,7 +23,9 @@
     width: 100%;
     text-align: center;
   }
-  
+  a{
+    cursor: pointer;
+  } 
   p{
     cursor-style: pointer;
   }
@@ -32,18 +34,40 @@
     width: 10px;
     height: 20px; 
   }
+  .title{
+    
+   }
   </style>
 </head>
 <body>
-  <h1>News recommender.</h1>
-  <form>
-    {% for part in topics %}
-      <div>
-        <input type="checkbox" value="{{ part['_id'] }}", name="{{ part['_id'] }}">
-        <p> {{ part['title'] }} </p>
-      </div>
-    {% endfor %}
-  </form>
+  <div class='title'>
+  	<h1>News recommender.</h1>
+  </div>
+  <div class='container'>
+  	<div class='row'>
+  		<div class='col-md-6'>
+  			<ul>	
+    				{% for part in topics %}
+        				<li><div><a link="{{ part['url'] }}">{{
+						part['title'] }}</a></div></li> 
+    				{% endfor %}
+  			</ul>	
+  		</div>
+
+		<div class='col-md-6'>
+			<fieldset class="articles-form"> 
+			
+				<input type="text" class="form-control article-input" id="article1" placeholder="First article URL">
+		
+				<input type="text" class="form-control article-input" id="article2" placeholder="Second article URL">
+			
+				<input type="text" class="form-control article-input" id="article3" placeholder="Third article URL">
+		
+				<a id="submit" class="btn btn-primary article-input">Submit</a>
+			</fieldset>
+		</div>
+ 	 </div>
+  </div>
   <div class='results'></div>
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
