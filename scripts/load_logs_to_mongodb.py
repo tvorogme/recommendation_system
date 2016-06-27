@@ -14,6 +14,8 @@ for line in logs_file:
     except IndexError:
         continue
     timestamp = timestamp.strip(' GET').strip('Z')
+    # Delete ms from timestamp
+    timestamp = ''.join(timestamp.split('.')[:-1])
     event_time = datetime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S')
     if not url or not user:
         continue
