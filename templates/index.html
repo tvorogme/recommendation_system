@@ -37,7 +37,7 @@
 <body>
   <h1>News recommender.</h1>
   <form>
-    {% for part in parts %}
+    {% for part in topics %}
       <div>
         <input type="checkbox" value="{{ part['_id'] }}", name="{{ part['_id'] }}">
         <p> {{ part['title'] }} </p>
