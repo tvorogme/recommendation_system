@@ -52,6 +52,7 @@ for article in parsed_articles.find():
     articles.insert_one({
         '_id': article['_id'],
         'title': article['title'],
+        'url': article['url'],
         'text': article['text'],
         'views': compressed_views,
         'time': article_times[article['url']]
