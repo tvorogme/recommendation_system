@@ -1,3 +1,4 @@
+import os
 import csv
 from pymongo import MongoClient
 
