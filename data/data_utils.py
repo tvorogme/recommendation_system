@@ -36,6 +36,8 @@ class TvrainData():
         :param except_articles: list of ids
         :return:
         """
-        raise NotImplemented()
+        for value in self.collection.find().limit(-1):
+            yield value
+
 
 
