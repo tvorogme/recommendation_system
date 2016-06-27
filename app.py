@@ -1,6 +1,7 @@
 import json
 from flask import Flask, render_template, request
 from data.data_utils import TvrainData
+from predict import predict
 app = Flask(__name__)
 data = TvrainData()
 
@@ -15,8 +16,8 @@ def recommendations():
     url1 = request.form['url1']
     url2 = request.form['url2']
     url3 = request.form['url3']
-    print(url1, url2, url3)
-    return json.dumps([{'url': 'http://yandex.ru/', 'title': 'Yandex'}])
+    predicted = predict(url1, url2, url3)
+    return json.dumps(predicted)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
