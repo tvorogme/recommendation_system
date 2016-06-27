@@ -1,10 +1,11 @@
 import os
+import sys
 import csv
 from pymongo import MongoClient
 
 print('Parsing topics')
 topics = {}
-with open('topics.csv', 'rb') as csvfile:
+with open(sys.argv[1], 'r') as csvfile:
     reader = csv.reader(csvfile)
     for line in reader:
         if line[0] == 1:
