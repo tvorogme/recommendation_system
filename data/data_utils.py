@@ -24,7 +24,11 @@ class TvrainData():
         :param articles_ids: ['article_id', ...]
         :return: list of MongoDB documents
         """
-        raise NotImplemented()
+        articles_data = []
+        for i in articles_ids:
+            articles_data.extend(list(self.collection.find({'url': i}).limit(-1)))
+
+        return articles_data
 
     def iterate_articles(self, except_articles):
         """
@@ -32,6 +36,8 @@ class TvrainData():
         :param except_articles: list of ids
         :return:
         """
-        raise NotImplemented()
+        for value in self.collection.find().limit(-1):
+            yield value
+
 
 

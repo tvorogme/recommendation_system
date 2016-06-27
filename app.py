@@ -16,7 +16,7 @@ def recommendations():
     url1 = request.form['url1']
     url2 = request.form['url2']
     url3 = request.form['url3']
-    predicted = predict(url1, url2, url3)
+    predicted = predict(url1, url2, url3, data)
     return json.dumps(predicted)
 
 if __name__ == '__main__':
