@@ -31,5 +31,11 @@ def predict(first_id=None, second_id=None, third_id=None,
         tvrain_data=tvrain_data,
         recommends_num=recommends_num
     )
-    # TODO: Follow return format
-    return result
+    output_articles = []
+    for object_id in result:
+        article_data = tvrain_data.dataframe.find_one({'_id': object_id})
+        output_articles.append({
+            'title': article_data['title'],
+            'url': article_data['url']
+        })
+    return output_articles
