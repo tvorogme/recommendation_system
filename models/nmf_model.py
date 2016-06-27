@@ -1,6 +1,5 @@
 from collections import Counter
 from models.features.topics import topics_similarity
-import random
 
 clf = None
 
