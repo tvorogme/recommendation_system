@@ -1,6 +1,6 @@
 import json
 from flask import Flask, render_template, request
-from models.data_utils import TvrainData
+from data.data_utils import TvrainData
 app = Flask(__name__)
 topics = TvrainData()
 

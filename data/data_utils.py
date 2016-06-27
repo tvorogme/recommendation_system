@@ -30,3 +30,4 @@ class TvrainData():
             articles.append({'_id': val[0], 'title': val[3]})
 
         return articles
+    
