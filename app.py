@@ -2,12 +2,11 @@ import json
 from flask import Flask, render_template, request
 from models.data_utils import TvrainData
 app = Flask(__name__)
-
+topics = TvrainData()
 
 @app.route('/')
 def index():
-    topics = TvrainData.get_random_articles(10)
-    return render_template('index.html', topics = topics)
+    return render_template('index.html', topics = topics.get_random_articles(10))
 
 
 @app.route('/recommendations', methods=['POST'])
@@ -19,4 +18,4 @@ def recommendations():
     return json.dumps([{'url': 'http://yandex.ru/', 'title': 'Yandex'}])
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8080, debug=True)
