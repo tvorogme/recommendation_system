@@ -22,7 +22,7 @@ class TvrainData():
 
     def get_article_id(self, url):
         """Get id by url"""
-        self.collection.find({'url': url}).limit(-1)
+        return self.collection.find_one({'url': url})['_id']
 
     def get_articles_data(self, articles_ids):
         """
