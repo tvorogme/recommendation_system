@@ -4,16 +4,15 @@ import os
 from pymongo import MongoClient
 import random
 
+
 class TvrainData():
     def __init__(self):
         """
-        :param data: Pandas Frame with data.
         Just load data from Mongo.
         """
         self.sequences = MongoClient(os.environ['MONGODB_URL']).tvrain.sequences
         self.collection = MongoClient(os.environ['MONGODB_URL']).tvrain.articles
         self.collection.create_index("time")
-
 
     def get_random_articles(self, n):
         """Returns N of topics for index.html"""
@@ -24,16 +23,17 @@ class TvrainData():
         """Get id by url"""
         return self.collection.find_one({'url': url})['_id']
 
-    def get_articles_data(self, articles_ids):
+    def get_articles_data(self, articles_urls):
         """
-        Get data from MongoDB for articles_ids
-        :param articles_ids: ['article_id', ...]
+        Get data from MongoDB for articles urls
+        :param articles_urls: ['article_url', ...]
         :return: list of MongoDB documents
         """
         articles_data = []
-        for i in articles_ids:
-            articles_data.extend(list(self.collection.find({'url': i}).limit(-1)))
-
+        for url in articles_urls:
+            articles_data.append(
+                self.collection.find_one({'url': url})
+            )
         return articles_data
 
     def iterate_articles(self, except_articles=[], skip=0):

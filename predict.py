@@ -7,24 +7,24 @@ model = nmf_model
 model_init = False
 
 
-def predict(first_id=None, second_id=None, third_id=None,
+def predict(first_url=None, second_url=None, third_url=None,
             tvrain_data=None, recommends_num=3):
     """
     Get news predictions. If one of ids isn't specified,
     so replace it to most popular articles. If none of ids
     is specified, get most popular news.
-    :param first_id: MongoDB id of first article
-    :param second_id:
-    :param third_id:
+    :param first_url: MongoDB url of first article
+    :param second_url:
+    :param third_url:
     :param tvrain_data: data.data_utils.TvrainData object
     :param recommends_num: num of articles to recommend
     :return: [{'id': '', 'url': '', 'title': ''}, ...]
     """
     global model_init
     
-    input_ids = [first_id, second_id, third_id]
+    input_ids = [first_url, second_url, third_url]
     input_articles = tvrain_data.get_articles_data([
-        first_id, second_id, third_id
+        first_url, second_url, third_url
     ])
     
     # First time we need to fit model

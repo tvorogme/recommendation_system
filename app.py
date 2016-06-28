@@ -5,6 +5,7 @@ from predict import predict
 app = Flask(__name__)
 data = TvrainData()
 
+
 @app.route('/')
 def index():
     topics = data.get_random_articles(10)
