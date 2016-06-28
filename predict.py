@@ -1,11 +1,10 @@
 """
 Get predictions by ids of user's news
 """
-from data.data_utils import TvrainData
-from models import random_model
+from models import nmf_model
 
-model = random_model
-model.init()
+model = nmf_model
+model_init = False
 
 
 def predict(first_id=None, second_id=None, third_id=None,
@@ -21,10 +20,18 @@ def predict(first_id=None, second_id=None, third_id=None,
     :param recommends_num: num of articles to recommend
     :return: [{'id': '', 'url': '', 'title': ''}, ...]
     """
+    global model_init
+    
     input_ids = [first_id, second_id, third_id]
     input_articles = tvrain_data.get_articles_data([
         first_id, second_id, third_id
     ])
+    
+    # First time we need to fit model
+    if not model_init:
+        model.init(tvrain_data)
+        model_init = True
+
     result = model.predict(
         input_articles=input_articles,
         input_ids=input_ids,
@@ -33,7 +40,7 @@ def predict(first_id=None, second_id=None, third_id=None,
     )
     output_articles = []
     for object_id in result:
-        article_data = tvrain_data.dataframe.find_one({'_id': object_id})
+        article_data = tvrain_data.find_one({'_id': object_id})
         output_articles.append({
             'title': article_data['title'],
             'url': article_data['url']
