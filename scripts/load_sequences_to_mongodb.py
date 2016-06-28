@@ -5,7 +5,7 @@ from pymongo import MongoClient
 
 print('Parsing sequences')
 with open(sys.argv[1], 'r') as sequences_file:
-    sequences = json.loads(sequences_file)
+    sequences = json.loads(sequences_file.read())
 
 print('Connecting to MongoDB')
 mongodb_client = MongoClient(os.environ['MONGODB_URL'])
