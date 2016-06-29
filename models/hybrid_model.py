@@ -15,7 +15,7 @@ def generate_features(data, val=None):
     features = []
     for raw in data:
         features.extend(topics_similarity(raw))
-    features.extend(cosine_similarity_features(features[:-1], features[-1]))
+    features.extend(cosine_similarity_features(data[:-1], data[-1]))
 
     if val is None:
         return features
@@ -32,7 +32,7 @@ def generate_data(data):
     for urls in data.sequences.find():
         features = generate_features(data.get_articles_data(urls['urls']), 1)
 
-        if len(features[0]) == 160:
+        if len(features[0]) == 163:
             x_true.append(features[0])
             y_true.append(features[1])
         else:
@@ -42,7 +42,7 @@ def generate_data(data):
     while len(x_true) != len(x_false):
         features = generate_features(data.get_random_articles(4), 0)
 
-        if len(features[0]) == 160:
+        if len(features[0]) == 163:
             x_false.append(features[0])
             y_false.append(features[1])
         else:
