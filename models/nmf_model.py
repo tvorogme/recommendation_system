@@ -2,7 +2,6 @@ from collections import Counter
 from models.features.topics import topics_similarity
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
-import random
 from sklearn.utils import shuffle
 
 clf = RandomForestClassifier()
@@ -50,7 +49,7 @@ def init(data):
     try:
         x = np.load(open('train_x.np', 'rb'))
         y = np.load(open('train_y.np', 'rb'))
-    except:
+    except FileNotFoundError:
         x, y = generate_data(data)
         np.save(open('train_x.np', 'wb'), x)
         np.save(open('train_y.np', 'wb'), y)

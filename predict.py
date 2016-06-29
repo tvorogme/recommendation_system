@@ -39,8 +39,8 @@ def predict(first_url=None, second_url=None, third_url=None,
         recommends_num=recommends_num
     )
     output_articles = []
-    for object in result:
-        article_data = tvrain_data.collection.find_one({'_id': object[0]})
+    for raw in result:
+        article_data = tvrain_data.collection.find_one({'_id': raw[0]})
         output_articles.append({
             'title': article_data['title'],
             'url': article_data['url']
