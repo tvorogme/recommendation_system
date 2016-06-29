@@ -34,16 +34,16 @@ class TvrainData():
             articles.append(self.collection.find_one({'url': url}))
         return articles
 
-    def iterate_articles(self, except_articles, skip=0, limit=None):
+    def iterate_articles(self, except_articles, skip=0, limit=None, query={}):
         """
         Iteate throw all articles without ids of except articles
         :param except_articles: list of ids
         :return:
         """
         if limit is None:
-            data = self.collection.find().skip(skip)
+            data = self.collection.find(query).skip(skip)
         else:
-            data = self.collection.find().skip(skip).limit(limit)
+            data = self.collection.find(query).skip(skip).limit(limit)
 
         for value in data:
             if value not in except_articles:
