@@ -39,4 +39,5 @@ def cosine_similarity_features(input_articles, output_article):
             second_set_len=len(input_article_views)
         )
         features.append(result)
+    print(len(input_articles), features)
     return features
