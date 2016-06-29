@@ -89,4 +89,8 @@ ENV/
 .ropeproject
 
 # Data files: logs, models etc.
-data/
+scripts/logs.txt
+scripts/topics.csv
+scripts/articles_4grams.json
+train_x.np
+train_y.np
