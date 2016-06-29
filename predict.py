@@ -21,12 +21,12 @@ def predict(first_url=None, second_url=None, third_url=None,
     :return: [{'id': '', 'url': '', 'title': ''}, ...]
     """
     global model_init
-    
+
     input_ids = [first_url, second_url, third_url]
     input_articles = tvrain_data.get_articles_data([
         first_url, second_url, third_url
     ])
-    
+
     # First time we need to fit model
     if not model_init:
         model.init(tvrain_data)
@@ -39,8 +39,8 @@ def predict(first_url=None, second_url=None, third_url=None,
         recommends_num=recommends_num
     )
     output_articles = []
-    for object_id in result:
-        article_data = tvrain_data.find_one({'_id': object_id})
+    for object in result:
+        article_data = tvrain_data.collection.find_one({'_id': object[0]})
         output_articles.append({
             'title': article_data['title'],
             'url': article_data['url']

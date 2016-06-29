@@ -65,10 +65,12 @@
 		
 				<a id="submit" class="btn btn-primary article-input">Submit</a>
 			</fieldset>
-		</div>
+            <br><br>
+            <h2>Рекомендации</h2>
+            <div id='recommend'></div>
+        </div>
  	 </div>
   </div>
-  <div class='results'></div>
   <!-- jQuery first, then Bootstrap JS. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
@@ -81,13 +83,13 @@
       'url3': $('#article3').val()}, 
       function (data) {
         var articles = JSON.parse(data);
-        $('.results').html('<ol>');
+        $('#recommend').html('<ol>');
         for (var i = 0; i < articles.length; i++) {
           console.log(i);
-          $('.results').append('<li><a href="' + articles[i].url +
+          $('#recommend').append('<li><a href="' + articles[i].url +
           '">'+ articles[i].title + '</a></li>');
         }
-        $('.results').append('</ol>')
+        $('#recommend').append('</ol>')
       });
       /*$("form input[type=submit]").click(function() {
       $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");

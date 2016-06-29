@@ -9,7 +9,7 @@ data = TvrainData()
 @app.route('/')
 def index():
     topics = data.get_random_articles(10)
-    return render_template('index.html', topics = topics)
+    return render_template('index.html', topics= topics)
 
 
 @app.route('/recommendations', methods=['POST'])
