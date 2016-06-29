@@ -1,8 +1,11 @@
 from collections import Counter
-from models.features.topics import topics_similarity
-from sklearn.ensemble import RandomForestClassifier
+import datetime
+
 import numpy as np
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.utils import shuffle
+
+from models.features.topics import topics_similarity
 
 clf = RandomForestClassifier()
 
@@ -62,10 +65,8 @@ def predict(input_articles, input_ids, tvrain_data, recommends_num):
     base_features = []
     # Gen for input articles
     base_features.extend(generate_features(input_articles))
-    min_time = input_articles[0]['time']
-    min_time.hour -= 5
-    max_time = input_articles[-1]['time']
-    max_time.hour += 5
+    min_time = input_articles[0]['time'] - datetime.timedelta(hours=5)
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
     mongo_query = {'time': {'$gte': min_time, '$lt': max_time}}
     # Gen for articles in Mongo
     for article in tvrain_data.iterate_articles(except_articles=input_ids, query=mongo_query):
