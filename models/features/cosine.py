@@ -33,8 +33,8 @@ def cosine_similarity_features(input_articles, output_article):
     for input_article in input_articles:
         input_article_views = set(input_article['views'])
         result = cosine_similarity(
-            intersection_num=output_article_views.intersection(input_article_views),
-            all_items_num=os.environ['ALL_USERS_NUM'],
+            intersection_num=len(output_article_views.intersection(input_article_views)),
+            all_items_num=int(os.environ['ALL_USERS_NUM']),
             first_set_len=len(output_article_views),
             second_set_len=len(input_article_views)
         )
