@@ -67,7 +67,7 @@ def predict(input_articles, input_ids, tvrain_data, recommends_num):
     base_features.extend(generate_features(input_articles))
     min_time = input_articles[0]['time'] - datetime.timedelta(hours=5)
     max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
-    mongo_query = {'time': {'$gte': min_time, '$lt': max_time}}
+    mongo_query = {'time': {'$gt': min_time, '$lt': max_time}}
     print(mongo_query)
     print('Input articles', *list(map(lambda x: x['time'], input_articles)))
     # Gen for articles in Mongo
