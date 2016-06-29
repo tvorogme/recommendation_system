@@ -16,7 +16,7 @@ class TvrainData():
 
     def get_random_articles(self, n):
         """Returns N of topics for index.html"""
-        articles = self.collection.find().skip(random.randint(0, self.collection.count())).limit(n)
+        articles = self.collection.find().sort("time", 1).skip(random.randint(0, self.collection.count())).limit(n)
         return list(articles)
 
     def get_article_id(self, url):
