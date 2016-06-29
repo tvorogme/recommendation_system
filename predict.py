@@ -1,9 +1,9 @@
 """
 Get predictions by ids of user's news
 """
-from models import nmf_model
+from models import hybrid_model
 
-model = nmf_model
+model = hybrid_model
 model_init = False
 
 

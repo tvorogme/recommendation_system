@@ -21,7 +21,7 @@ def cosine_similarity(intersection_num, all_items_num,
     return cosine_similarity_value
 
 
-def cosine_similarity_features(input_articles, output_article, all):
+def cosine_similarity_features(input_articles, output_article):
     """
     Generate features for input articles and possible recommended article
     :param input_articles: list of MongoDB documents
