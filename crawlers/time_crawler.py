@@ -53,7 +53,7 @@ for article in articles.find():
     tree = html.fromstring(response.text)
     pub_date = tree.xpath("//div[@class='meta__value']/span/text()")
     try:
-        pub_date_py = parse_date(pub_date[0].encode('utf-8'))
+        pub_date_py = parse_date(pub_date[0])
     except ValueError:
         print(pub_date[0])
         break
