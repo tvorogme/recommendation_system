@@ -14,6 +14,7 @@ def cosine_similarity(intersection_num, all_items_num,
     intersection_probability = (intersection_num / all_items_num) ** 2
     first_set_probability = first_set_len / all_items_num
     second_set_probability = second_set_len / all_items_num
+    print(intersection_probability, all_items_num, first_set_len, second_set_len)
     cosine_similarity_value = (
         intersection_probability /
         (first_set_probability * second_set_probability)
