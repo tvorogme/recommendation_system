@@ -1,6 +1,6 @@
 # Рекомендательная система новостей
-![GoTo](http://goto.msk.ru/templates/gk_university/images/favicon.ico)
-![Code Health](https://landscape.io/github/xenx/recommendation_system/master/landscape.svg?style=flat)](https://landscape.io/github/xenx/recommendation_system/master)
+[![GoTo](http://goto.msk.ru/templates/gk_university/images/favicon.ico)](http://goto.msk.ru/)
+[![Code Health](https://landscape.io/github/xenx/recommendation_system/master/landscape.svg?style=flat)](https://landscape.io/github/xenx/recommendation_system/master)
 
 ## Предисловие
 Находясь в лагере [GoTo](http://goto.msk.ru/) мы получили задачу рекомендательной системы от компании, которая в свою очередь получила заказ от телеканала '[Дождь](https://tvrain.ru/)'. Как только мы получили данные - мы начали работать.
