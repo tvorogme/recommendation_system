@@ -1,7 +1,8 @@
 ![scrot](https://github.com/tvorozid/recommendation_system/blob/master/scrot.png)
 
-[![GoTo](http://goto.msk.ru/templates/gk_university/images/favicon.ico)](http://goto.msk.ru/)
+[![GoTo](https://img.shields.io/badge/GoTo-project-4bb89b.svg)](https://github.com/goto-ru)
 [![Code Health](https://landscape.io/github/xenx/recommendation_system/master/landscape.svg?style=flat)](https://landscape.io/github/xenx/recommendation_system/master)
+[![Code Climate](https://codeclimate.com/github/tvorozid/recommendation_system/badges/gpa.svg)](https://codeclimate.com/github/tvorozid/recommendation_system)
 
 ## Предисловие
 Перед нами стояда задача проанализировать новостной портал и научиться автоматически рекомендовать пользователям новости, которые с большей вероятностью им понравятся.
@@ -29,7 +30,6 @@
 
 ### Бинарный классификатор
 С помощью логов мы так же построили [график](https://github.com/tvorozid/recommendation_system/blob/master/scripts/graph_by_url.ipynb) просмотров от времени с начала выхода новости, по которому можно увидеть, что популярность новости падает после пяти часов. Таким образом, мы поняли, что пользователю, в основном, не инетересны новости срок жизни которых превышает 5 часов. 
-
 По данным логов мы построили сеанс человека - 4 новости, который он читал подряд по времени. С помощью бинарного классификатора мы предсказываем на сколько четвёртая новость подходит первым трём. 
 
 После того, как мы попробовали разные алгоритмы  для бинарной классификации мы выбрали [Random Forest Classifier](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) поскольку он показал лучший результат из всех. В качестве фичей для бинарногго классификатора мы использовали 160 фичей Topic Modeling-a (по 40 на каждую новость) и 3 коэффициента Отиаи для 1, 2, 3 новости с 4. Этот коэффициент понять какие пользователи читают одни и те же новости.
