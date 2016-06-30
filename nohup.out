@@ -1,0 +1,33 @@
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 117-179-854
+62.148.135.203 - - [29/Jun/2016 17:43:33] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [29/Jun/2016 17:44:07] "POST /recommendations HTTP/1.1" 200 -
+109.188.125.4 - - [29/Jun/2016 17:47:52] "GET / HTTP/1.1" 200 -
+109.188.125.4 - - [29/Jun/2016 17:47:54] "GET /favicon.ico HTTP/1.1" 404 -
+109.188.125.4 - - [29/Jun/2016 17:48:34] "POST /recommendations HTTP/1.1" 200 -
+109.188.125.4 - - [29/Jun/2016 17:48:36] "POST /recommendations HTTP/1.1" 200 -
+109.188.125.4 - - [29/Jun/2016 17:48:41] "GET / HTTP/1.1" 200 -
+109.188.125.4 - - [29/Jun/2016 17:49:00] "POST /recommendations HTTP/1.1" 200 -
+109.188.125.4 - - [29/Jun/2016 17:56:30] "GET / HTTP/1.1" 200 -
+109.188.125.4 - - [29/Jun/2016 17:57:18] "POST /recommendations HTTP/1.1" 200 -
+ * Detected change in '/root/projects/recommendation_system/predict.py', reloading
+{'time': {'$lt': datetime.datetime(2016, 5, 3, 23, 57, 53), '$gt': datetime.datetime(2016, 5, 3, 13, 53, 23)}}
+Input articles 2016-05-03 18:53:23 2016-05-03 18:50:23 2016-05-03 18:57:53
+639
+{'time': {'$lt': datetime.datetime(2016, 5, 31, 0, 22, 54), '$gt': datetime.datetime(2016, 5, 30, 14, 22, 31)}}
+Input articles 2016-05-30 19:22:31 2016-05-30 19:22:29 2016-05-30 19:22:54
+1195
+{'time': {'$lt': datetime.datetime(2016, 5, 31, 0, 22, 54), '$gt': datetime.datetime(2016, 5, 30, 14, 22, 31)}}
+Input articles 2016-05-30 19:22:31 2016-05-30 19:22:29 2016-05-30 19:22:54
+1195
+{'time': {'$lt': datetime.datetime(2016, 5, 12, 18, 14, 51), '$gt': datetime.datetime(2016, 5, 12, 7, 53, 33)}}
+Input articles 2016-05-12 12:53:33 2016-05-12 13:04:39 2016-05-12 13:14:51
+388
+{'time': {'$lt': datetime.datetime(2016, 5, 30, 16, 29, 57), '$gt': datetime.datetime(2016, 5, 30, 6, 26, 46)}}
+Input articles 2016-05-30 11:26:46 2016-05-30 11:25:30 2016-05-30 11:29:57
+675
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 100-126-370
