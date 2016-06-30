@@ -1,0 +1,410 @@
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 247-496-196
+62.148.135.203 - - [30/Jun/2016 15:56:43] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 15:56:54] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 15:57:30] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 15:58:08] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:22:06] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:22:13] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:22:17] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:22:28] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:22:40] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:22:46] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:22:54] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:23:02] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:26:59] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 16:27:00] "GET /favicon.ico HTTP/1.1" 404 -
+62.148.135.203 - - [30/Jun/2016 16:27:00] "GET /favicon.ico HTTP/1.1" 404 -
+62.148.135.203 - - [30/Jun/2016 16:47:19] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:01:49] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:06:50] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:11:38] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:16:29] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:16:43] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:16:54] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:17:43] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:17:47] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:18:01] "POST /recommendations HTTP/1.1" 200 -
+77.234.195.209 - - [30/Jun/2016 17:18:23] "GET / HTTP/1.1" 200 -
+77.234.195.209 - - [30/Jun/2016 17:18:52] "POST /recommendations HTTP/1.1" 200 -
+77.234.195.209 - - [30/Jun/2016 17:18:53] "POST /recommendations HTTP/1.1" 200 -
+77.234.195.209 - - [30/Jun/2016 17:18:53] "POST /recommendations HTTP/1.1" 200 -
+/root/anaconda3/lib/python3.5/site-packages/werkzeug/filesystem.py:63: BrokenFilesystemWarning: Detected a misconfigured UNIX filesystem: Will use UTF-8 as filesystem encoding instead of 'ascii'
+  BrokenFilesystemWarning)
+77.234.195.209 - - [30/Jun/2016 17:19:29] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:30] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:30] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:30] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:30] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:30] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:31] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:31] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:31] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:31] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+77.234.195.209 - - [30/Jun/2016 17:19:31] "POST /recommendations HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/anaconda3/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/projects/recommendation_system/app.py", line 20, in recommendations
+    predicted = predict(url1, url2, url3, data)
+  File "/root/projects/recommendation_system/predict.py", line 39, in predict
+    recommends_num=recommends_num
+  File "/root/projects/recommendation_system/models/hybrid_model.py", line 66, in predict
+    max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
+TypeError: 'NoneType' object is not subscriptable
+62.148.135.203 - - [30/Jun/2016 17:21:31] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:21:38] "POST /recommendations HTTP/1.1" 200 -
+ * Detected change in '/root/projects/recommendation_system/data/data_utils.py', reloading
+1424
+354
+115
+1605
+301
+670
+633
+149
+149
+430
+784
+209
+309
+309
+309
+307
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 254-806-914
+62.148.135.203 - - [30/Jun/2016 17:30:21] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:30:32] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:30:39] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:30:46] "POST /recommendations HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:30:50] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 17:30:57] "POST /recommendations HTTP/1.1" 200 -
+ * Detected change in '/root/projects/recommendation_system/data/data_utils.py', reloading
+181
+351
+234
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 230-629-483
+62.148.135.203 - - [30/Jun/2016 17:32:41] "POST /recommendations HTTP/1.1" 200 -
+ * Detected change in '/root/projects/recommendation_system/models/hybrid_model.py', reloading
+234
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 208-738-226
+ * Detected change in '/root/projects/recommendation_system/models/hybrid_model.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 204-363-443
+62.148.135.203 - - [30/Jun/2016 18:44:40] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 18:44:56] "POST /recommendations HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 247-594-901
+62.148.135.203 - - [30/Jun/2016 19:20:05] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 19:20:20] "POST /recommendations HTTP/1.1" 200 -
+/root/anaconda3/lib/python3.5/site-packages/werkzeug/filesystem.py:63: BrokenFilesystemWarning: Detected a misconfigured UNIX filesystem: Will use UTF-8 as filesystem encoding instead of 'ascii'
+  BrokenFilesystemWarning)
+62.148.135.203 - - [30/Jun/2016 19:20:31] "POST /recommendations HTTP/1.1" 500 -

@@ -47,10 +47,8 @@ class TvrainData:
         else:
             data = self.collection.find(query).skip(skip).limit(limit)
 
-        print(data.count())
-
         for value in data:
-            if value not in except_articles:
+            if value['_id'] not in except_articles:
                 yield value
 
     def get_sequences(self):

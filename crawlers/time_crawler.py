@@ -48,6 +48,7 @@ def parse_url(article, articles):
     response = requests.get(url)
     tree = html.fromstring(response.text)
     pub_date = tree.xpath("//div[@class='meta__value']/span/text()")
+    print(url, pub_date)
     try:
         pub_date_py = parse_date(pub_date[0])
     except ValueError:

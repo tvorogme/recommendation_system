@@ -23,9 +23,15 @@ def predict(first_url=None, second_url=None, third_url=None,
     global model_init
 
     input_ids = [first_url, second_url, third_url]
-    input_articles = tvrain_data.get_articles_data([
-        first_url, second_url, third_url
-    ])
+
+    input_articles = []
+    for url in input_ids:
+        if url != '':
+            input_articles.append(url)
+        else:
+            input_ids.remove(url)
+
+    input_articles = tvrain_data.get_articles_data(input_articles)
 
     # First time we need to fit model
     if not model_init:
