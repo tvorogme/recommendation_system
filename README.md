@@ -2,6 +2,7 @@
 
 [![GoTo](http://goto.msk.ru/templates/gk_university/images/favicon.ico)](http://goto.msk.ru/)
 [![Code Health](https://landscape.io/github/xenx/recommendation_system/master/landscape.svg?style=flat)](https://landscape.io/github/xenx/recommendation_system/master)
+[![Code Climate](https://codeclimate.com/github/tvorozid/recommendation_system/badges/gpa.svg)](https://codeclimate.com/github/tvorozid/recommendation_system)
 
 ## Предисловие
 Перед нами стояда задача проанализировать новостной портал и научиться автоматически рекомендовать пользователям новости, которые с большей вероятностью им понравятся.
