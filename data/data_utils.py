@@ -5,7 +5,7 @@ from pymongo import MongoClient
 import random
 
 
-class TvrainData():
+class TvrainData:
     def __init__(self):
         """
         Just load data from Mongo.
@@ -34,12 +34,14 @@ class TvrainData():
             articles.append(self.collection.find_one({'url': url}))
         return articles
 
-    def iterate_articles(self, except_articles, skip=0, limit=None, query={}):
+    def iterate_articles(self, except_articles, skip=0, limit=None, query=None):
         """
         Iteate throw all articles without ids of except articles
         :param except_articles: list of ids
         :return:
         """
+        if query is None:
+            query = {}
         if limit is None:
             data = self.collection.find(query).skip(skip)
         else:
