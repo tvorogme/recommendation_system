@@ -1,0 +1,46 @@
+strictness: veryhigh
+test-warnings: yes
+doc-warnings: yes
+max-line-length: 200
+
+dodgy:
+    # looks for 'dodgy' things like passwords or git conflict artifacts
+    run: true
+
+mccabe:
+    # complexity checking.
+    run: true
+
+pep257:
+    # docstring checking
+    run: true
+    disable:
+        - D203 # https://github.com/PyCQA/pydocstyle/pull/91
+        # disable requiring docstrings for every public %s for now
+        - D100
+        - D101
+        - D102
+        - D103
+        - D104
+
+pep8:
+    run: true
+
+pyflakes:
+    run: true
+
+pylint:
+    run: true
+    disable:
+        - W0142 # * or ** magic
+        - W0141 # filter()
+        - too-few-public-methods
+        - missing-docstring # disable requiring docstrings for every public %s for now
+
+pyroma:
+    #check packaging
+    run: true
+
+vulture:
+    # find unused code
+    run: true
