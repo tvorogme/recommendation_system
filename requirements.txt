@@ -2,3 +2,5 @@ flask
 numpy
 sklearn
 pymongo
+requests
+lxml
