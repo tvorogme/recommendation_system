@@ -68,6 +68,7 @@ for article in articles.find():
     thread = threading.Thread(target=parse_url, args=(article, articles))
     thread.start()
     threads.append(thread)
+    time.sleep(0.5)
 
 for thread in threads:
     thread.join()
