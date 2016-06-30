@@ -2,6 +2,7 @@ import os
 import time
 import datetime
 import re
+import threading
 
 import requests
 from lxml import html
@@ -42,12 +43,7 @@ def parse_date(tvrain_date_str):
         return datetime.datetime(year=year, month=month, day=day, hour=int(hours), minute=int(minutes))
 
 
-mongodb_client = MongoClient(os.environ['MONGODB_URL'])
-db = mongodb_client.tvrain
-articles = db.articles
-
-
-for article in articles.find():
+def parse_url(article, articles):
     url = article['url']
     response = requests.get(url)
     tree = html.fromstring(response.text)
@@ -56,7 +52,22 @@ for article in articles.find():
         pub_date_py = parse_date(pub_date[0])
     except ValueError:
         print(pub_date[0])
-        break
+        return
     timestamp = time.mktime(pub_date_py.timetuple())
     articles.update({'_id': article['_id']}, {'$set': {'datetime': timestamp}})
 
+
+mongodb_client = MongoClient(os.environ['MONGODB_URL'])
+db = mongodb_client.tvrain
+articles = db.articles
+
+threads = []
+for article in articles.find():
+    if 'datetime' in article:
+        continue
+    thread = threading.Thread(target=parse_url, args=(article, articles))
+    thread.start()
+    threads.append(thread)
+
+for thread in threads:
+    thread.join()
