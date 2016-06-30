@@ -408,3 +408,11 @@ TypeError: 'NoneType' object is not subscriptable
 /root/anaconda3/lib/python3.5/site-packages/werkzeug/filesystem.py:63: BrokenFilesystemWarning: Detected a misconfigured UNIX filesystem: Will use UTF-8 as filesystem encoding instead of 'ascii'
   BrokenFilesystemWarning)
 62.148.135.203 - - [30/Jun/2016 19:20:31] "POST /recommendations HTTP/1.1" 500 -
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 156-096-969
+46.182.106.190 - - [30/Jun/2016 19:49:24] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 19:49:24] "GET / HTTP/1.1" 200 -
+62.148.135.203 - - [30/Jun/2016 19:49:43] "POST /recommendations HTTP/1.1" 200 -
+65.19.167.131 - - [30/Jun/2016 19:50:43] "POST /recommendations HTTP/1.1" 200 -

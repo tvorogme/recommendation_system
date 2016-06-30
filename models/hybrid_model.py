@@ -54,7 +54,7 @@ def init(data):
         np.save(open('train_y.np', 'wb'), y)
     x, y = shuffle(x, y)
     x_one = list(map(lambda a: a[:81], x))
-    x_two = list(map(lambda a: a[:121], x))
+    x_two = list(map(lambda a: a[:122], x))
 
     print('Train model for 3 articles.')
     clf.fit(x, y)
@@ -66,7 +66,7 @@ def init(data):
     clf_two.fit(x_two, y)
 
 
-def predict(input_articles, input_ids, tvrain_data, recommends_num):
+def predict(input_articles, input_ids,tvrain_data, recommends_num):
     result_counter = Counter()
     min_time = input_articles[0]['time'] - datetime.timedelta(hours=5)
     max_time = input_articles[-1]['time'] + datetime.timedelta(hours=5)
