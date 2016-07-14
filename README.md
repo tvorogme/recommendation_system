@@ -3,7 +3,7 @@
 [![GoTo](https://img.shields.io/badge/GoTo-project-4bb89b.svg)](https://github.com/goto-ru)
 [![Code Health](https://landscape.io/github/xenx/recommendation_system/master/landscape.svg?style=flat)](https://landscape.io/github/xenx/recommendation_system/master)
 [![Code Climate](https://codeclimate.com/github/tvorozid/recommendation_system/badges/gpa.svg)](https://codeclimate.com/github/tvorozid/recommendation_system)
-![MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ## Предисловие
 Перед нами стояла задача проанализировать новостной портал и научиться автоматически рекомендовать пользователям новости, которые с большей вероятностью им понравятся.
 Предложенная задача - реальная задача с которой столкнулись специалисты по анализу данных компании [E-contenta](https://e-contenta.com/ru) при разработке рекомендательного движка для сайта телеканала '[Дождь](https://tvrain.ru/)'. Часть данных была анонимизирована, как обычно делают компании, отдавая свои данные внешним аналитикам.
